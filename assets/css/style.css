@@ -2,8 +2,8 @@ body{
     margin: 0;
     font-family: system-ui;
 }
-.parallax{
-    background-image:url('background-image.jpg');
+.parallax, .parallax1{
+    background-image:url('/assets/images/background-image.jpg');
     height: max-content;
     background-attachment: fixed;
     background-position: center;
@@ -41,7 +41,7 @@ body{
        display:inline-block;
        padding: 25px 25px 26px 25px;    
 }
-.a-menu{
+.a-menu, .a-links{
     text-decoration: none;
     color: white;
 }
@@ -111,7 +111,7 @@ a{
     text-decoration: none;
 }
 .title{
-    padding: 50px;
+    padding: 10px;
     font-size: 50px;
     font-weight: bold;
     letter-spacing: 10px;
@@ -167,3 +167,40 @@ a{
     border: 1px solid #5b8c5a;
     box-shadow: 0 0 10px 5px #5b8c5a inset;
 }
+.parallax1{
+    background-image: url('/assets/images/main-bg.jpeg');
+}
+.footer{
+    background: rgba(0,0 0,0.5);
+    text-align: center;
+    padding: 20px;
+}
+.quick-links{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 30%;
+}
+.quick-links ul{
+    padding: 0;
+}
+.quick-links li{
+    list-style: none;
+    padding: 10px;
+    font-weight: 300;
+}
+.a-links:hover{
+    color: #fd5e53;
+}
+.copyrights{
+    font-size: 16px;
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin:15px;
+}
+.container, .deals-container{
+    background-image: url('/assets/images/full-bg.jpg');
+}
+
+
