@@ -1,578 +1,601 @@
 <html>
-    <head>
-        <title>E-commerce Website</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css        ">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="store.js">
-        <script src="store.js"></script>
-        <script>
-            function stickyMenu(){
-                var sticky=document.getElementById('sticky');
-                if(window.pageYoffset > 220) {
-                    sticky.classList.add('sticky');
-                }
-                else{
-                    sticky.classList.remove('sticky');
-                }
+
+<head>
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css        ">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="store.js">
+    <script src="store.js"></script>
+    <script>
+        function stickyMenu() {
+            var sticky = document.getElementById('sticky');
+            if (window.pageYoffset > 220) {
+                sticky.classList.add('sticky');
             }
-            window.onscroll = function() {
-                stickyMenu();
+            else {
+                sticky.classList.remove('sticky');
             }
-        </script>
-    </head>
-    <body>
-        <!-- modal trriger Cart starts -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Shopping Carts
-  </button>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Cart</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="container cart-section" id="cart">
-                <h1>Shopping Cart</h1>
-                <div class="row cart">
-                 
+        }
+        window.onscroll = function () {
+            stickyMenu();
+        }
+    </script>
+</head>
+
+<body>
+    <!-- modal trriger Cart starts -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Shopping Carts
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="cart-total">
-                    <p>
-                        <span>Total Price</span>
-                        <span id="total-price">₹</span>
-                    </p>
-                    <p>
-                       <span>Number of Items</span>
-                       <span></span>
-                   </p>
-                   <p>
-                       <span>You save</span>
-                       <span>₹</span>
-                   </p>
-                   <a href="#home">Proceed to Checkout</a>
+                <div class="modal-body">
+                    <div class="container cart-section" id="cart">
+                        <h1>Shopping Cart</h1>
+                        <div id="cart" class="row cart">
+                            <div class="cart-total">
+                                <p>
+                                    <span>Total Price</span>
+                                    <span id="total-price">₹</span>
+                                </p>
+                                <p>
+                                    <span id="total-items">Number of Items</span>
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <span>You save</span>
+                                    <span>₹</span>
+                                </p>
+                                <a href="#home">Proceed to Checkout</a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-              </div>
-              
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Confirm Order</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Confirm Order</button>
-        </div>
-      </div>
     </div>
-  </div>
-        <!-- modal trigger ends Cart ends-->
+    <!-- modal trigger ends Cart ends-->
+    <div class="parallax">
+        <div class="page-title">Eat Fresh</div>
+    </div>
+    <div class="menu" id="sticky">
+        <ul class="menu-ul">
+            <a href="#" class="a-menu">
+                <li>Home</li>
+            </a>
+            <a href="#deals" class="a-menu">
+                <li>Deals</li>
+            </a>
+            <a href="#recommendation" class="a-menu">
+                <li>Recommendation</li>
+            </a>
+            <a href="#vegetables" class="a-menu">
+                <li>Vegetables</li>
+            </a>
+            <a href="#fruits" class="a-menu">
+                <li>Fruits</li>
+            </a>
+            <a href="#meat" class="a-menu">
+                <li>Meat</li>
+            </a>
+            <a href="" class="a-menu">
+                <li>Cart</li>
+            </a>
+        </ul>
+        <div class="search-box">
+            <form>
+                <input type="text" placeholder="Search..." name="search" class="search-input">
+                <button type="submit"><i class="fa fa-search"></i></button>
+
+            </form>
+        </div>
+    </div>
+    <!-- Home page begins -->
+    <div class="container">
+        <a href="#vegetables">
+            <div class="categories">
+                <img src="./assets/images/vegetables/onion.png">
+                <div class="image-title">Vegetables</div>
+            </div>
+        </a>
+        <a href="#fruits">
+            <div class="categories">
+                <img src="./assets/images/fruits/cherry.png">
+                <div class="image-title">Fruits</div>
+            </div>
+        </a>
+        <a href="#meat">
+            <div class="categories">
+                <img src="./assets/images/meat/meat.png">
+                <div class="image-title">Meat & Seafood</div>
+            </div>
+        </a>
+        <a href="#deals">
+            <div class="categories">
+                <img src="./assets/images/deals/deal.png">
+                <div class="image-title">Deals</div>
+            </div>
+        </a>
+    </div>
+    <!-- Deals  begins -->
+    <div class="deals-container" id="deals">
         <div class="parallax">
-            <div class="page-title">Eat Fresh</div>
- </div>
- <div class="menu" id="sticky"> 
-     <ul class="menu-ul">
-         <a href="#" class= "a-menu"> <li>Home</li></a>
-         <a href="#deals" class= "a-menu"> <li>Deals</li></a>
-         <a href="#recommendation" class= "a-menu"> <li>Recommendation</li></a>
-         <a href="#vegetables" class= "a-menu"> <li>Vegetables</li></a>
-         <a href="#fruits" class= "a-menu"> <li>Fruits</li></a>
-         <a href="#meat" class= "a-menu"> <li>Meat</li></a>
-         <a href="" class= "a-menu"> <li>Cart</li></a>
-     </ul>
-     <div class="search-box">
-         <form>
-<input type="text" placeholder="Search..." name="search"
-class="search-input">
-<button type ="submit"><i class="fa fa-search"></i></button>
+            <div class="title">Deals</div>
+        </div>
+        <div class="deal">
+            Save 20% on min-purchase of Rs.2500 on vegeatbles <br>
+            <button class="coupon-btn">Add Coupon</button>
+        </div>
+        <div class="deal">
+            Save 25% on min-purchase of Rs.3500 on fruits <br>
+            <button class="coupon-btn">Add Coupon</button>
+        </div>
+        <div class="deal">
+            Save 35% on min-purchase of Rs.4500 on meat/seafood<br>
+            <button class="coupon-btn">Add Coupon</button>
+        </div>
+    </div>
 
-         </form>
-     </div>
- </div>
- <!-- Home page begins -->
-<div class="container">
-    <a href="#vegetables">
-        <div class="categories">
-            <img src="./assets/images/vegetables/onion.png">
-            <div class="image-title">Vegetables</div>
+    <!-- Deals ends  -->
+    <!-- Recommended section starts  -->
+    <div class="deals-container categories" id="recommendation">
+        <div class="parallax">
+            <div class="title">Highly Recommended</div>
         </div>
-    </a>
-    <a href="#fruits">
-        <div class="categories">
-            <img src="./assets/images/fruits/cherry.png">
-            <div class="image-title">Fruits</div>
+        <div class="items categories">
+            <div class="images">
+                <img src="./assets/images/vegetables/okra.png">
+            </div>
+            <div class="description">
+                <b>Okra</b><br>
+                <div class="item-select">
+                    Price : Rs. 25.00/1kg
+                </div>
+            </div>
         </div>
-    </a>
-    <a href="#meat">
-        <div class="categories">
-            <img src="./assets/images/meat/meat.png">
-            <div class="image-title">Meat & Seafood</div>
-        </div>
-    </a>
-    <a href="#deals">
-        <div class="categories">
-            <img src="./assets/images/deals/deal.png">
-            <div class="image-title">Deals</div>
-        </div>
-    </a>
-</div>
-<!-- Deals  begins -->
-<div class="deals-container" id="deals">
-    <div class="parallax">
-        <div class="title">Deals</div>
-    </div>
-    <div class="deal">
-        Save 20% on min-purchase of Rs.2500 on vegeatbles <br>
-        <button class="coupon-btn">Add Coupon</button>
-    </div>
-    <div class="deal">
-        Save 25% on min-purchase of Rs.3500 on fruits <br>
-        <button class="coupon-btn">Add Coupon</button>
-    </div>
-    <div class="deal">
-        Save 35% on min-purchase of Rs.4500 on meat/seafood<br>
-        <button class="coupon-btn">Add Coupon</button>
-    </div>
-</div>
 
-<!-- Deals ends  -->
-<!-- Recommended section starts  -->
-<div class="deals-container categories" id="recommendation">
-    <div class="parallax">
-        <div class="title">Highly Recommended</div>
-    </div>
-    <div class="items categories">
-        <div class="images">
-            <img src="./assets/images/vegetables/okra.png">
+        <div class="items categories">
+            <div class="images">
+                <img src="./assets/images/fruits/apple.png">
+            </div>
+            <div class="description">
+                <b>Apple</b><br>
+                <div class="item-select">
+                    Price : Rs. 25.00/1kg
+                </div>
+            </div>
         </div>
-        <div class="description">
-            <b>Okra</b><br>
-            <div class="item-select">
-                Price : Rs. 25.00/1kg
+
+        <div class="items categories">
+            <div class="images">
+                <img src="./assets/images/fruits/lichi.png">
+            </div>
+            <div class="description">
+                <b>Lichi<span class="badge badge-secondary">New</span></b><br>
+                <div class="item-select">
+                    Price : Rs. 25.00/1kg
+                </div>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img src="./assets/images/meat/pork.png">
+            </div>
+            <div class="description">
+                <b>Pork</b><br>
+                <div class="item-select">
+                    Price : Rs. 25.00/1kg
+                </div>
+            </div>
+        </div>
+        <div class="items categories">
+            <div class="images">
+                <img src="./assets/images/meat/beef.png">
+            </div>
+            <div class="description">
+                <b>Beef</b><br>
+                <div class="item-select">
+                    Price : Rs. 25.00/1kg
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Recommendation ends -->
+    <!-- Vegetable begins  -->
+    <div class="deals-container" id="vegetables">
+        <div class="parallax">
+            <div class="title">Vegetables</div>
+        </div>
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/vegetables/okra.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">okra</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">25.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/vegetables/red-onion.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Onions</span></b><br>
+                <div class="item-select">
+                    Price : Rs. <span class="item-price">25.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/vegetables/carrot.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">carrots</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/vegetables/potato.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Potatoes</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5 ">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/vegetables/Broccoli.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Broccoli</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
     </div>
 
-    <div class="items categories">
-        <div class="images">
-            <img src="./assets/images/fruits/apple.png">
+    <!-- Vegetable ends  -->
+    <!-- Fruits begins -->
+    <div class="deals-container" id="fruits">
+        <div class="parallax">
+            <div class="title">Fruits</div>
         </div>
-        <div class="description">
-            <b>Apple</b><br>
-            <div class="item-select">
-                Price : Rs. 25.00/1kg
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/fruits/apple.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Apple</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
             </div>
         </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/fruits/banana.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Banana</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/fruits/orange.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Orange</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/fruits/lichi.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Litchi</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qtyt">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/fruits/grapes.png">
+            </div>
+            <div class="description">
+                <b> <span class="item-name">Grapes</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <!-- Fruits ends -->
+    <!-- Meat begins -->
+    <div class="deals-container" id="meat">
+        <div class="parallax">
+            <div class="title">Meat</div>
+        </div>
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/meat/pork.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Pork</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select>
+                <br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/meat/beef.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Beef</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/meat/chicken.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Chicken</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/meat/turkey.png">
+            </div>
+            <div class="description">
+                <b> <span class="item-name">Turkey</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="items categories">
+            <div class="images">
+                <img class="item-img" src="./assets/images/meat/duck.png">
+            </div>
+            <div class="description">
+                <b><span class="item-name">Duck</span></b><br>
+                <div class="item-select">
+                    Price : Rs.<span class="item-price">35.00</span>/1kg
+                </div>
+                <label>Qty:</label>
+                <select class="item-select qty">
+                    <option value="2">2kg</option>
+                    <option value="3">3kg</option>
+                    <option value="4">4kg</option>
+                    <option value="5">5kg</option>
+                </select><br>
+                <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <!-- Meat ends -->
+    <!-- Home page ends  -->
+    <!-- footer starts -->
+    <div class="parallax1">
+        <div class="footer">
+            <div class="quick-links">
+                <div><b>Locations</b></div>
+                <ul>
+                    <li><a href="" class="a-links">Address 1</a></li>
+                    <li><a href="" class="a-links">Address 2</a></li>
+                    <li><a href="" class="a-links">Address 3</a></li>
+
+                </ul>
+            </div>
+            <div class="quick-links">
+                <div><b>Careers</b></div>
+                <ul>
+                    <li><a href="" class="a-links">Packing staff</a></li>
+                    <li><a href="" class="a-links">Delivery agents</a></li>
+                    <li><a href="" class="a-links">Shef Fillers</a></li>
+
+                </ul>
+            </div>
+            <div class="quick-links">
+                <div><b>Quick Links</b></div>
+                <ul>
+                    <li><a href="" class="a-links">Contact Us</a></li>
+                    <li><a href="" class="a-links">FAQ</a></li>
+                    <li><a href="" class="a-links">HELP</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyrights">
+        <i class="fa fa-copyright"></i>Created By Surbhi Khokhawat
     </div>
 
-    <div class="items categories">
-        <div class="images">
-            <img src="./assets/images/fruits/lichi.png">
-        </div>
-        <div class="description">
-            <b>Lichi<span class="badge badge-secondary">New</span></b><br>
-            <div class="item-select">
-                Price : Rs. 25.00/1kg
-            </div>
-        </div>
-    </div>
 
-    <div class="items categories">
-        <div class="images">
-            <img src="./assets/images/meat/pork.png">
-        </div>
-        <div class="description">
-            <b>Pork</b><br>
-            <div class="item-select">
-                Price : Rs. 25.00/1kg
-            </div>
-        </div>
-    </div>
-    <div class="items categories">
-        <div class="images">
-            <img src="./assets/images/meat/beef.png">
-        </div>
-        <div class="description">
-            <b>Beef</b><br>
-            <div class="item-select">
-                Price : Rs. 25.00/1kg
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Recommendation ends -->
-<!-- Vegetable begins  -->
-<div class="deals-container" id="vegetables">
-    <div class="parallax">
-        <div class="title">Vegetables</div>
-    </div>
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/vegetables/okra.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">okra</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">25.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img"src="./assets/images/vegetables/red-onion.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Onions</span></b><br>
-            <div class="item-select">
-                Price : Rs. <span class="item-price">25.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/vegetables/carrot.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">carrots</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select qty">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/vegetables/potato.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Potatoes</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/vegetables/Broccoli.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Broccoli</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-</div>
-
-<!-- Vegetable ends  -->
-<!-- Fruits begins -->
-<div class="deals-container" id="fruits">
-    <div class="parallax">
-        <div class="title">Fruits</div>
-    </div>
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img"src="./assets/images/fruits/apple.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Apple</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/fruits/banana.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Banana</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/fruits/orange.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Orange</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/fruits/lichi.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Litchi</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/fruits/grapes.png">
-        </div>
-        <div class="description">
-            <b> <span class="item-name">Grapes</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-</div>
-<!-- Fruits ends -->
-<!-- Meat begins -->
-<div class="deals-container" id="meat">
-    <div class="parallax">
-        <div class="title">Meat</div>
-    </div>
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/meat/pork.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Pork</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option >2kg</option>
-                <option >3kg</option>
-                <option >4kg</option>
-                <option >5kg</option>
-              </select>
-            <br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/meat/beef.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Beef</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/meat/chicken.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Chicken</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/meat/turkey.png">
-        </div>
-        <div class="description">
-            <b> <span class="item-name">Turkey</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="items categories">
-        <div class="images">
-            <img class="item-img" src="./assets/images/meat/duck.png">
-        </div>
-        <div class="description">
-            <b><span class="item-name">Duck</span></b><br>
-            <div class="item-select">
-                Price : Rs.<span class="item-price">35.00</span>/1kg
-            </div>
-            <label>Qty:</label>
-            <select class="item-select">
-                <option>2kg</option>
-                <option>3kg</option>
-                <option>4kg</option>
-                <option>5kg</option>
-            </select><br>
-            <button class="buynow-btn" onclick="addToCart(this)">Add to Cart</button>
-        </div>
-    </div>
-</div>
-<!-- Meat ends -->
- <!-- Home page ends  -->
- <!-- footer starts -->
-<div class="parallax1">
-    <div class="footer">
-        <div class="quick-links">
-            <div><b>Locations</b></div>
-            <ul>
-                <li><a href="" class="a-links">Address 1</a></li>
-                <li><a href="" class="a-links">Address 2</a></li>
-                <li><a href="" class="a-links">Address 3</a></li>
-                
-            </ul>
-        </div>
-        <div class="quick-links">
-            <div><b>Careers</b></div>
-            <ul>
-                <li><a href="" class="a-links">Packing staff</a></li>
-                <li><a href="" class="a-links">Delivery agents</a></li>
-                <li><a href="" class="a-links">Shef Fillers</a></li>
-                
-            </ul>
-        </div>
-        <div class="quick-links">
-            <div><b>Quick Links</b></div>
-            <ul>
-                <li><a href="" class="a-links">Contact Us</a></li>
-                <li><a href="" class="a-links">FAQ</a></li>
-                <li><a href="" class="a-links">HELP</a></li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="copyrights">
-    <i class="fa fa-copyright"></i>Created By Surbhi Khokhawat
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
- <!-- footer ends -->
-<script>
-     function openBar() {
-    document.getElementById("cart").style.display = "block";
-  }
-  function closeBar() {
-    document.getElementById("cart").style.display = "none";
-  }
-</script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- footer ends -->
+    <script>
+        function openBar() {
+            document.getElementById("cart").style.display = "block";
+        }
+        function closeBar() {
+            document.getElementById("cart").style.display = "none";
+        }
+    </script>
+</body>
 
 </html>

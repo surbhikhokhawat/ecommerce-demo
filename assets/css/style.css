@@ -274,8 +274,10 @@ a{
     padding: 20px;
     margin-left: 20px;
     height: 240px;
-    border: 1px solid silver;
+    border: 1px solid red;
     border-radius: 5px;
+    color: darkslategray;
+    margin-bottom: 20px;
 }
 .cart-total p {
     display: flex;
