@@ -28,7 +28,8 @@
 
 <body>
     <!-- modal trriger Cart starts -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="openCart(this)" > Shopping Carts
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"
+        onclick="openCart(this)"> Shopping Carts
     </button>
 
     <!-- Modal -->
@@ -62,7 +63,7 @@
                                 <a href="#home">Proceed to Checkout</a>
                             </div>
                             <div id="cartItem">
-                                
+
                             </div>
                         </div>
 
@@ -75,7 +76,6 @@
             </div>
         </div>
     </div>
-    
     <!-- modal trigger ends Cart ends-->
     <div class="parallax">
         <div class="page-title">Eat Fresh</div>
@@ -103,14 +103,38 @@
             <a href="" class="a-menu">
                 <li>Cart</li>
             </a>
-        </ul>
-        <div class="search-box">
-            <form>
-                <input type="text" placeholder="Search..." name="search" class="search-input">
-                <button type="submit"><i class="fa fa-search"></i></button>
+            <div class="search-box">
+                <form>
+                    <input type="text" placeholder="Search..." name="search" class="search-input">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <!-- Registeration form  -->
+            <button type="button" class="btn btn-primary" data-toggle="modal"
+                data-target=".bd-example-modal-sm">LogIn</button>
 
-            </form>
-        </div>
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="login-form">
+                            <h1>Login Form</h1>
+                            <form action="#">
+                                <input type="text" name="username" placeholder="username">
+                                <input type="password" name="password" placeholder="password">
+                                <span>
+                                    <input type="checkbox" name="checkbox">
+                                    <label for="checkbox">remember</label>
+                                </span>
+                                <input type="submit" value="log in">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </ul>
+    
     </div>
     <!-- Home page begins -->
     <div class="container">
@@ -231,8 +255,8 @@
             <div class="title">Vegetables</div>
         </div>
         <!-- <div class="vegies">
-            <div class="items categories" id="vegetables">
-                <div class="images">
+            <div class="items categories">
+                <div id="imgSrc" class="images">
                     <img class="item-img" src="./assets/images/vegetables/okra.png">
                 </div>
                 <div class="description">
@@ -247,8 +271,6 @@
     </div>
 
     <!-- Vegetable ends  -->
-
-    <!-- Meat ends -->
     <!-- Home page ends  -->
     <!-- footer starts -->
     <div class="parallax1">

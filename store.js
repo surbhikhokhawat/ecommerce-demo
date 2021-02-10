@@ -23,6 +23,7 @@ function loadData(jsonData) {
     })
 } 
 
+
 function addToCart(item_id) {
     let get_selected_items = products.filter( function(item) {return item.id == item_id })
     if(get_selected_items.length > 0) {
@@ -35,7 +36,7 @@ function addToCart(item_id) {
             "img_src": selected_item.img_src
         }
         cart.items.push(item);
-        cart.total_price += parseFloat(get_selected_items[0].price); 
+        cart.total_price += parseFloat(selected_items.price); 
     }
 }
 
