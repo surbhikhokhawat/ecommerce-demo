@@ -16,7 +16,6 @@ $.ajax({
         alert(err);
     }
 })
-
 function loadData(jsonData) {
     products = jsonData;
     $.each(products, function (index, item) {
@@ -24,8 +23,6 @@ function loadData(jsonData) {
         vegetablesSection.append("<div class='items categories' id=" + item.id + "><div class='images'><img src='" + item.img_src + "' class='item-img'></div><div class='description'><b><span class='item-name'>" + item.name + "</span></b><br> <div class='item-select'>Price : Rs.<span class='item-price'>" + item.price + "</span>/1kg</div><br><button class='buynow-btn' onclick='addToCart(" + item.id + ")'>Add to Cart</button></div></div>")
     })
 }
-
-
 function addToCart(item_id) {
     let get_selected_items = products.filter(function (item) { return item.id == item_id })
     if (get_selected_items.length > 0) {
@@ -51,7 +48,6 @@ function addToCart(item_id) {
         }
     }
 }
-
 function changeqty(mode, id) {
     let alreadyAdded = cart.items.findIndex((item) => {
         return item.id == id;
@@ -91,6 +87,8 @@ function login() {
     let password = $("#login-password").val()
     if (username === "surbhi" && password === "12345678") {
         isLoggedin = username
+        $("#exampleModalCenter").modal('show');
+        $(".bd-example-modal-sm").modal('hide');
     } else {
         alert("Wrong Id/Pass")
     }
@@ -101,6 +99,15 @@ function checkLogin() {
     if (isLoggedin === false) {
         $('#login-reg').click()
     } else {
-        window.location.href = "/checkout.html"
+       
     }
 }
+var $total = 100;
+var $total2 = 100;
+
+function Discount(disc_amnt, total_amnt) {
+    var dec = total_amnt * (disc / 100).toFixed(2); 
+    return dec;
+    
+}
+
