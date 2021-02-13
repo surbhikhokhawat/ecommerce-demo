@@ -424,6 +424,7 @@ a{
 .modal-open { 
     position: fixed;
 }
+
 #exampleModalCenter
 {
     overflow-y: scroll;

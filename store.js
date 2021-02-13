@@ -105,9 +105,13 @@ function checkLogin() {
 var $total = 100;
 var $total2 = 100;
 
-function Discount(disc_amnt, total_amnt) {
-    var dec = total_amnt * (disc / 100).toFixed(2); 
-    return dec;
+function Discount() {
+    let disc_amt = $('#discount-code1').val()
+    var disc = cart.total_price * disc_amt / 100
+    cart.total_price -= disc
+    cart.total_price = cart.total_price.toFixed(2)
+    console.log(cart.total_price, disc)
+    $('#totalPrice').html(cart.total_price);
     
 }
 function Payment(){
@@ -122,12 +126,12 @@ function Payment(){
                 // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
             },
             "prefill": {
-                "name": "ABC", // pass customer name
-                "email": 'A@A.COM',// customer email
-                "contact": '+919123456780' //customer phone no.
+                "name": "", // pass customer name
+                "email": '',// customer email
+                "contact": '' //customer phone no.
             },
             "notes": {
-                "address": "address" //customer address 
+                "address": "" //customer address 
             },
             "theme": {
                 "color": "#15b8f3" // screen color
@@ -137,7 +141,20 @@ function Payment(){
         var propay = new Razorpay(options);
         propay.open();
 }
-   
+//    function loginchceck{
+//        call karvana he 
+//        pay now pe click krega , chceck login ka function call krega fr vo btaega login h  ya nhi 
+//        agaer true hota h toh hi code jaega 
+//    }
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 
 
 
