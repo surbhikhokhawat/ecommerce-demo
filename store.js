@@ -110,4 +110,34 @@ function Discount(disc_amnt, total_amnt) {
     return dec;
     
 }
+function Payment(){
+    var options = {
+            "key": "rzp_test_i7LAD00NwZFOmd",
+            "amount": cart.total_price, // Example: 2000 paise = INR 20
+            "name": "Surbhi Khokhawat",
+            "description": "This is a small demo",
+            "image": "asse",// COMPANY LOGO
+            "handler": function (response) {
+                console.log(response);
+                // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+            },
+            "prefill": {
+                "name": "ABC", // pass customer name
+                "email": 'A@A.COM',// customer email
+                "contact": '+919123456780' //customer phone no.
+            },
+            "notes": {
+                "address": "address" //customer address 
+            },
+            "theme": {
+                "color": "#15b8f3" // screen color
+            }
+        };
+        console.log(options);
+        var propay = new Razorpay(options);
+        propay.open();
+}
+   
+
+
 

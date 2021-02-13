@@ -84,6 +84,7 @@ button{
     margin: 50px 50px 50px 5%;
     width: 90%;
     text-align: center;
+    background-image: url('');
 }
 .categories, .items
 {
@@ -201,9 +202,6 @@ a{
     text-align: center;
     margin:15px;
 }
-.container, .deals-container{
-    background-image: url('');
-}
 .container .cart-section{
     max-width: 1200px;
     margin: 0 auto;
@@ -275,7 +273,6 @@ a{
 .cart-total{
     padding: 20px;
     margin-left: 20px;
-    height: 240px;
     border: 1px solid #445b0f;
     border-radius: 5px;
     color: darkslategray;
