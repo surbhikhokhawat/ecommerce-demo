@@ -32,7 +32,7 @@
     </div>
     <div class="menu" id="sticky">
         <ul class="menu-ul">
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter"
+            <button id="openCartBtn" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter"
                 onclick="openCart(this)"><span><i class="fa fa-shopping-cart pt-2"></i></span>
             </button>
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -106,7 +106,7 @@
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal"
                                         onclick="checkLogin()">Proceed To Checkout</button>
-                                    <button type="butoon" id="paymentclick" onclick="Payment()">pay amount</button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -189,6 +189,7 @@
     </ul>
     </div>
     <div class="container">
+        
         <a href="#vegetables">
             <div class="categories">
                 <img src="./assets/images/vegetables/onion.png">
@@ -218,18 +219,26 @@
         <div class="parallax">
             <div class="title">Deals</div>
         </div>
-        <div class="deal">
-            Save 20% on min-purchase of Rs.2500 on vegeatbles <br>
-            <button class="coupon-btn">Add Coupon</button>
+        <div class="row  justify-content-center">
+            <div class="col-sm-12 col-lg-3"><div class="deal">
+                Save 20% on min-purchase of Rs.2500 on vegeatbles <br>
+                <button class="coupon-btn">Add Coupon</button>
+            </div>
         </div>
-        <div class="deal">
-            Save 25% on min-purchase of Rs.3500 on fruits <br>
-            <button class="coupon-btn">Add Coupon</button>
+            <div class="col-sm-12 col-lg-3"> <div class="deal">
+                Save 25% on min-purchase of Rs.3500 on fruits <br>
+                <button class="coupon-btn">Add Coupon</button>
+            </div>
         </div>
-        <div class="deal">
-            Save 35% on min-purchase of Rs.4500 on meat/seafood<br>
-            <button class="coupon-btn">Add Coupon</button>
+            <div class="col-sm-12 col-lg-3"><div class="deal">
+                Save 35% on min-purchase of Rs.4500 on meat/seafood<br>
+                <button class="coupon-btn">Add Coupon</button>
+            </div>
         </div>
+          </div>
+        
+       
+        
     </div>
     <div class="deals-container categories" id="recommendation">
         <div class="parallax">

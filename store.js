@@ -92,6 +92,7 @@ function login() {
     } else {
         alert("Wrong Id/Pass")
     }
+    $('#openCartBtn').click()
     console.log(isLoggedin)
 }
 
@@ -99,7 +100,7 @@ function checkLogin() {
     if (isLoggedin === false) {
         $('#login-reg').click()
     } else {
-       
+        Payment()
     }
 }
 var $total = 100;
