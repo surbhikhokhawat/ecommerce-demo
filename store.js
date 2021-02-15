@@ -95,6 +95,63 @@ function login() {
     $('#openCartBtn').click()
     console.log(isLoggedin)
 }
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function () {
+    document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function () {
+    document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function () {
+    // Validate lowercase letters
+    var lowerCaseLetters = /[a-z]/g;
+    if (myInput.value.match(lowerCaseLetters)) {
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+    } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+    }
+
+    // Validate capital letters
+    var upperCaseLetters = /[A-Z]/g;
+    if (myInput.value.match(upperCaseLetters)) {
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+    } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+    }
+
+    // Validate numbers
+    var numbers = /[0-9]/g;
+    if (myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+    } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+    }
+
+    // Validate length
+    if (myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+    } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+    }
+}
 
 function checkLogin() {
     if (isLoggedin === false) {
@@ -113,47 +170,41 @@ function Discount() {
     cart.total_price = cart.total_price.toFixed(2)
     console.log(cart.total_price, disc)
     $('#totalPrice').html(cart.total_price);
-    
-}
-function Payment(){
-    var options = {
-            "key": "rzp_test_i7LAD00NwZFOmd",
-            "amount": cart.total_price, // Example: 2000 paise = INR 20
-            "name": "Surbhi Khokhawat",
-            "description": "This is a small demo",
-            "image": "asse",// COMPANY LOGO
-            "handler": function (response) {
-                console.log(response);
-                // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
-            },
-            "prefill": {
-                "name": "", // pass customer name
-                "email": '',// customer email
-                "contact": '' //customer phone no.
-            },
-            "notes": {
-                "address": "" //customer address 
-            },
-            "theme": {
-                "color": "#15b8f3" // screen color
-            }
-        };
-        console.log(options);
-        var propay = new Razorpay(options);
-        propay.open();
-}
-//    function loginchceck{
-//        call karvana he 
-//        pay now pe click krega , chceck login ka function call krega fr vo btaega login h  ya nhi 
-//        agaer true hota h toh hi code jaega 
-//    }
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+}
+function Payment() {
+    var options = {
+        "key": "rzp_test_i7LAD00NwZFOmd",
+        "amount": cart.total_price, // Example: 2000 paise = INR 20
+        "name": "Surbhi Khokhawat",
+        "description": "This is a small demo",
+        "image": "./assets/images/payment-logo/razorpay-2.png",// COMPANY LOGO
+        "handler": function (response) {
+            console.log(response);
+            // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+        },
+        "prefill": {
+            "name": "", // pass customer name
+            "email": '',// customer email
+            "contact": '' //customer phone no.
+        },
+        "notes": {
+            "address": "" //customer address 
+        },
+        "theme": {
+            "color": "#15b8f3" // screen color
+        }
+    };
+    console.log(options);
+    var propay = new Razorpay(options);
+    propay.open();
+}
+
+var modal = document.getElementById('id01');
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
 

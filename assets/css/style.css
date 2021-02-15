@@ -81,7 +81,7 @@ button{
     outline: none;
 }
 .container, .deals-container{
-    margin: 50px 50px 50px 5%;
+    margin: 50px 50px 30px 5%;
     width: 90%;
     text-align: center;
     background-image: url('');
@@ -424,6 +424,10 @@ a{
 .modal-open { 
     position: fixed;
 }
+.signup{
+    display: grid;
+}
+
 
 #exampleModalCenter
 {
