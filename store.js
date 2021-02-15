@@ -1,11 +1,8 @@
 var cart = {};
 cart.total_price = 0.0;
 cart.items = [];
-
 var isLoggedin = false
-
 var products = []
-
 $.ajax({
     url: 'assets/data.json',
     dataType: 'json',
@@ -65,7 +62,6 @@ function changeqty(mode, id) {
         $('#qty' + id).html(cart.items[alreadyAdded].qty)
     }
 }
-
 function openCart(e) {
     var cartSection = $('#cartItem');
     console.log(cart)
@@ -77,11 +73,9 @@ function openCart(e) {
     })
     console.log(cart)
 }
-
 $("#login-form").submit(function (e) {
     e.preventDefault();
 });
-
 function login() {
     let username = $("#login-username").val()
     let password = $("#login-password").val()
@@ -100,17 +94,14 @@ var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
 var length = document.getElementById("length");
-
 // When the user clicks on the password field, show the message box
 myInput.onfocus = function () {
     document.getElementById("message").style.display = "block";
 }
-
 // When the user clicks outside of the password field, hide the message box
 myInput.onblur = function () {
     document.getElementById("message").style.display = "none";
 }
-
 // When the user starts to type something inside the password field
 myInput.onkeyup = function () {
     // Validate lowercase letters
@@ -122,7 +113,6 @@ myInput.onkeyup = function () {
         letter.classList.remove("valid");
         letter.classList.add("invalid");
     }
-
     // Validate capital letters
     var upperCaseLetters = /[A-Z]/g;
     if (myInput.value.match(upperCaseLetters)) {
@@ -132,7 +122,6 @@ myInput.onkeyup = function () {
         capital.classList.remove("valid");
         capital.classList.add("invalid");
     }
-
     // Validate numbers
     var numbers = /[0-9]/g;
     if (myInput.value.match(numbers)) {
@@ -142,7 +131,6 @@ myInput.onkeyup = function () {
         number.classList.remove("valid");
         number.classList.add("invalid");
     }
-
     // Validate length
     if (myInput.value.length >= 8) {
         length.classList.remove("invalid");
@@ -152,7 +140,6 @@ myInput.onkeyup = function () {
         length.classList.add("invalid");
     }
 }
-
 function checkLogin() {
     if (isLoggedin === false) {
         $('#login-reg').click()
@@ -162,7 +149,6 @@ function checkLogin() {
 }
 var $total = 100;
 var $total2 = 100;
-
 function Discount() {
     let disc_amt = $('#discount-code1').val()
     var disc = cart.total_price * disc_amt / 100
@@ -170,7 +156,6 @@ function Discount() {
     cart.total_price = cart.total_price.toFixed(2)
     console.log(cart.total_price, disc)
     $('#totalPrice').html(cart.total_price);
-
 }
 function Payment() {
     var options = {
@@ -199,7 +184,6 @@ function Payment() {
     var propay = new Razorpay(options);
     propay.open();
 }
-
 var modal = document.getElementById('id01');
 window.onclick = function (event) {
     if (event.target == modal) {
