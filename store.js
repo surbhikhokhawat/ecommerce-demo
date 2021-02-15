@@ -83,10 +83,12 @@ $("#login-form").submit(function (e) {
 function login() {
     let username = $("#login-username").val()
     let password = $("#login-password").val()
-    var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    let x = re.test(password);
+    var regexforPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    let passwordCheck = regexforPassword.test(password);
+    var regexforEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    let EmailCheck = regexforEmail.test(username);
     console.log(x)
-    if (username.includes("@") && username.includes(".") && x)
+    if (EmailCheck && passwordCheck)
      {
         console.log('asd')
         isLoggedin = username
@@ -95,7 +97,7 @@ function login() {
         localStorage.setItem("email", username)
         $('#openCartBtn').click()
     } else {
-        alert("password must contain atleast/more than 5 characters")
+        alert("password must contain min 8 letter password, with at least a symbol, upper and lower case letters and a number")
     }
 
     console.log(isLoggedin)
