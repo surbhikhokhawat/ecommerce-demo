@@ -30,8 +30,7 @@ function addToCart(item_id) {
         let alreadyAdded = cart.items.findIndex((item) => {
             return item.id == selected_item.id;
         })
-        if (alreadyAdded >= 0) 
-        {
+        if (alreadyAdded >= 0) {
             cart.items[alreadyAdded].qty += 1
             cart.total_price += parseFloat(cart.items[alreadyAdded].price)
             console.log(cart);
@@ -80,11 +79,14 @@ function openCart(e) {
 $("#login-form").submit(function (e) {
     e.preventDefault();
 });
+
 function login() {
     let username = $("#login-username").val()
     let password = $("#login-password").val()
-    console.log("****",username,password,username.includes("@") && username.includes(".") && password.length > 5)
-    if (username.includes("@") && username.includes(".") && password.length > 5)
+    var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    let x = re.test(password);
+    console.log(x)
+    if (username.includes("@") && username.includes(".") && x)
      {
         console.log('asd')
         isLoggedin = username
@@ -94,18 +96,18 @@ function login() {
         $('#openCartBtn').click()
     } else {
         alert("password must contain atleast/more than 5 characters")
-        }
-  
+    }
+
     console.log(isLoggedin)
 }
 
 function checkLogin() {
     var email = localStorage.getItem("email")
     console.log(email)
-    if(email == null) {
+    if (email == null) {
         $('#login-reg').click()
     }
-     else {
+    else {
         Payment()
     }
 }
