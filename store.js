@@ -5,6 +5,25 @@ var isLoggedin = false
 var products = []
 localStorage.removeItem("email")
 
+function stickyMenu() {
+    var sticky = document.getElementById('sticky');
+    if (window.pageYoffset > 220) {
+        sticky.classList.add('sticky');
+    }
+    else {
+        sticky.classList.remove('sticky');
+    }
+}
+window.onscroll = function () {
+    stickyMenu();
+}
+
+function openBar() {
+    document.getElementById("cart").style.display = "block";
+}
+function closeBar() {
+    document.getElementById("cart").style.display = "none";
+}
 
 $.ajax({
     url: 'assets/data.json',
@@ -16,6 +35,7 @@ $.ajax({
         alert(err);
     }
 })
+
 function loadData(jsonData) {
     products = jsonData;
     $.each(products, function (index, item) {
@@ -23,6 +43,7 @@ function loadData(jsonData) {
         vegetablesSection.append("<div class='items categories' id=" + item.id + "><div class='images'><img src='" + item.img_src + "' class='item-img'></div><div class='description'><b><span class='item-name'>" + item.name + "</span></b><br> <div class='item-select'>Price : Rs.<span class='item-price'>" + item.price + "</span>/1kg</div><br><button class='buynow-btn' onclick='addToCart(" + item.id + ")'>Add to Cart</button></div></div>")
     })
 }
+
 function addToCart(item_id) {
     let get_selected_items = products.filter(function (item) { return item.id == item_id })
     if (get_selected_items.length > 0) {
@@ -33,9 +54,7 @@ function addToCart(item_id) {
         if (alreadyAdded >= 0) {
             cart.items[alreadyAdded].qty += 1
             cart.total_price += parseFloat(cart.items[alreadyAdded].price)
-            console.log(cart);
         } else {
-            console.log(selected_item);
             let item = {
                 "id": selected_item.id,
                 "name": selected_item.name,
@@ -48,6 +67,7 @@ function addToCart(item_id) {
         }
     }
 }
+
 function changeqty(mode, id) {
     let alreadyAdded = cart.items.findIndex((item) => {
         return item.id == id;
@@ -65,16 +85,16 @@ function changeqty(mode, id) {
         $('#qty' + id).html(cart.items[alreadyAdded].qty)
     }
 }
+
 function openCart(e) {
     var cartSection = $('#cartItem');
-    console.log(cart)
+
     cartSection.empty()
     $('#totalPrice').html(cart.total_price);
     $('#totalItems').html(cart.items.length);
     $.each(cart.items, function (index, item) {
         cartSection.append("<div class='items categories adjust-card' id=" + item.id + "><div class='images'><img src='" + item.img_src + "' class='item-img'></div><div class='description'><b><span class='item-name'>" + item.name + "</span></b><br> <div class='item-select'>Price : Rs.<span class='item-price'>" + item.price + "</span>/1kg</div><br> <div class='item-select'>Qty : <span class='inc-dec' onclick='changeqty(0, " + item.id + ")'>-</span> <span id='qty" + item.id + "'>" + item.qty + "</span><span class='inc-dec' onclick='changeqty(1, " + item.id + ")'>+</span> </div><br></div></div>")
     })
-    console.log(cart)
 }
 $("#login-form").submit(function (e) {
     e.preventDefault();
@@ -87,10 +107,7 @@ function login() {
     let passwordCheck = regexforPassword.test(password);
     var regexforEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let EmailCheck = regexforEmail.test(username);
-    console.log(x)
-    if (EmailCheck && passwordCheck)
-     {
-        console.log('asd')
+    if (EmailCheck && passwordCheck) {
         isLoggedin = username
         $("#exampleModalCenter").modal('show');
         $(".bd-example-modal-sm").modal('hide');
@@ -99,13 +116,10 @@ function login() {
     } else {
         alert("password must contain min 8 letter password, with at least a symbol, upper and lower case letters and a number")
     }
-
-    console.log(isLoggedin)
 }
 
 function checkLogin() {
     var email = localStorage.getItem("email")
-    console.log(email)
     if (email == null) {
         $('#login-reg').click()
     }
@@ -119,11 +133,11 @@ function Discount() {
     let disc_amt = $('#discount-code1').val()
     var disc = cart.total_price * disc_amt / 100
     cart.total_price -= disc
-    cart.total_price = cart.total_price.toFixed(2)
-    console.log(cart.total_price, disc)
+    cart.total_price = cart.total_price.toFixed(2).log(cart.ttal_price, disc)
     $('#totalPrice').html(cart.total_price);
 }
 function Payment() {
+    var email = localStorage.getItem("email")
     var options = {
         "key": "rzp_test_i7LAD00NwZFOmd",
         "amount": cart.total_price, // Example: 2000 paise = INR 20
@@ -131,22 +145,22 @@ function Payment() {
         "description": "This is a small demo",
         "image": "./assets/images/payment-logo/razorpay-2.png",// COMPANY LOGO
         "handler": function (response) {
-            console.log(response);
+            log(respons);
             // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
         },
         "prefill": {
-            "name": "", // pass customer name
-            "email": '',// customer email
-            "contact": '' //customer phone no.
+            "name": "ashi", // pass customer name
+            "email": email,// customer email
+            "contact": '1234567890' //customer phone no.
         },
         "notes": {
             "address": "" //customer address 
         },
         "theme": {
-            "color": "#15b8f3" // screen color
+            "color": "#184d47" // screen color
         }
     };
-    console.log(options);
+    log(options);
     var propay = new Razorpay(options);
     propay.open();
 }
