@@ -93,6 +93,11 @@ button{
     border-radius: 0 0 50px 50px;
     display: inline-block;
 }
+.adjust-card{
+    width: 100%;
+    margin: unset;
+    margin-bottom: 10px;
+}
 .categories:hover, items:hover{
     box-shadow: 0 0 10px 3px #184d47;
 }
@@ -271,7 +276,7 @@ a{
 }
 .cart-total{
     padding: 20px;
-    margin-left: 20px;
+    width: 100%;
     border: 1px solid #445b0f;
     border-radius: 5px;
     color: darkslategray;
@@ -430,6 +435,17 @@ a{
 {
     overflow-y: scroll;
     max-height: 500px;
+}
+.inc-dec{
+    background-color: green;
+    padding: 2px 9px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin-top: -1px;
+    color: white;
+    margin-left: 5px;
+    font-size: 16px;
+    margin-right: 5px;
 }
 
 @media (min-width: 576px) { }
