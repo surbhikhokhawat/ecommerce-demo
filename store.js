@@ -4,10 +4,11 @@ cart.items = [];
 var isLoggedin = false
 var products = []
 localStorage.removeItem("email")
-
 function stickyMenu() {
-    var sticky = document.getElementById('sticky');
-    if (window.pageYoffset > 220) {
+
+    var sticky = document.getElementsByClassName('.menu');
+    var s = sticky.offset
+    if (window.pageYoffset > s) {
         sticky.classList.add('sticky');
     }
     else {
@@ -45,14 +46,16 @@ function loadData(jsonData) {
 }
 
 function addToCart(item_id) {
+    let count = 0;
     let get_selected_items = products.filter(function (item) { return item.id == item_id })
-    if (get_selected_items.length > 0) {
+    if (get_selected_items.length >= 0) {
         let selected_item = get_selected_items[0];
         let alreadyAdded = cart.items.findIndex((item) => {
             return item.id == selected_item.id;
         })
         if (alreadyAdded >= 0) {
             cart.items[alreadyAdded].qty += 1
+            count += 1;
             cart.total_price += parseFloat(cart.items[alreadyAdded].price)
         } else {
             let item = {
@@ -62,9 +65,13 @@ function addToCart(item_id) {
                 "price": selected_item.price,
                 "img_src": selected_item.img_src
             }
+
             cart.items.push(item);
+            count += 1;
             cart.total_price += parseFloat(selected_item.price);
+
         }
+        document.getElementById("badgeCount").innerHTML = cart.items.length;
     }
 }
 
@@ -72,13 +79,15 @@ function changeqty(mode, id) {
     let alreadyAdded = cart.items.findIndex((item) => {
         return item.id == id;
     })
-    if (alreadyAdded != -1) {
+    if (alreadyAdded >= 0) {
         if (mode === 1) {
             cart.items[alreadyAdded].qty += 1
             cart.total_price += parseFloat(cart.items[alreadyAdded].price)
         } else {
-            cart.items[alreadyAdded].qty -= 1
-            cart.total_price -= parseFloat(cart.items[alreadyAdded].price)
+            if (cart.items[alreadyAdded].qty > 1) {
+                cart.items[alreadyAdded].qty -= 1
+                cart.total_price -= parseFloat(cart.items[alreadyAdded].price)
+            }
         }
         $('#totalPrice').html(cart.total_price);
         $('#totalItems').html(cart.items.length);
@@ -93,12 +102,16 @@ function openCart(e) {
     $('#totalPrice').html(cart.total_price);
     $('#totalItems').html(cart.items.length);
     $.each(cart.items, function (index, item) {
-        cartSection.append("<div class='items categories adjust-card' id=" + item.id + "><div class='images'><img src='" + item.img_src + "' class='item-img'></div><div class='description'><b><span class='item-name'>" + item.name + "</span></b><br> <div class='item-select'>Price : Rs.<span class='item-price'>" + item.price + "</span>/1kg</div><br> <div class='item-select'>Qty : <span class='inc-dec' onclick='changeqty(0, " + item.id + ")'>-</span> <span id='qty" + item.id + "'>" + item.qty + "</span><span class='inc-dec' onclick='changeqty(1, " + item.id + ")'>+</span> </div><br></div></div>")
+        cartSection.append("<div class='items categories adjust-card' id=" + item.id + "><div class='images'><img src='" + item.img_src + "' class='item-img'></div><div class='description'><b><span class='item-name'>" + item.name + "</span></b><br> <div class='item-select'>Price : Rs.<span class='item-price'>" + item.price + "</span>/1kg</div><br> <div class='item-select'>Qty : <span class='inc-dec' onclick='changeqty(0, " + item.id + ")'>-</span> <span id='qty" + item.id + "'>" + item.qty + "</span><span class='inc-dec' onclick='changeqty(1, " + item.id + ")'>+</span> </div><br><span class='remove-button' onclick='removeButton(" + item.id + ")'>Remove</span></div></div>")
     })
 }
 $("#login-form").submit(function (e) {
     e.preventDefault();
 });
+
+function removeButton(id) {
+
+}
 
 function login() {
     let username = $("#login-username").val()
@@ -116,6 +129,10 @@ function login() {
     } else {
         alert("password must contain min 8 letter password, with at least a symbol, upper and lower case letters and a number")
     }
+}
+
+function removeButton() {
+    console.log("removeB")
 }
 
 function checkLogin() {
@@ -170,6 +187,10 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+
+
+
 
 
 

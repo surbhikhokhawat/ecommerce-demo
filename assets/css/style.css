@@ -21,11 +21,6 @@ body{
     font-family: fantasy;
     letter-spacing: 20px;
 }
-.sticky{
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
 .menu{
     background: #184d47;
     text-align: center;
@@ -169,10 +164,14 @@ a{
     font-weight: bold;
     margin-top: 10px;
     color: white;
+    cursor: pointer;
 }
-.buynow-btn:hover{
+.buynow-btn:hover,.buynow-btn:focus{
     border: 1px solid #5b8c5a;
     box-shadow: 0 0 10px 5px #5b8c5a inset;
+    text-decoration: none;
+    outline: none;
+
 }
 .parallax1{
     background-image: url('/assets/images/background-footer.jpg');
@@ -425,9 +424,7 @@ a{
     font-size: 12px;
     color: #e4e4e4;
 }
-.modal-open { 
-    position: fixed;
-}
+
 .signup{
     display: grid;
 }
@@ -446,6 +443,13 @@ a{
     margin-left: 5px;
     font-size: 16px;
     margin-right: 5px;
+}
+.remove-button{
+    padding: 10px;
+    background-color:#184d47;
+    color: white;
+    border-radius: 8px;
+
 }
 
 @media (min-width: 576px) { }

@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>E-commerce Website</title>
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -9,18 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
+
 <body>
     <!-- navbar starts  -->
     <div class="parallax">
         <div class="page-title">Eat Fresh</div>
     </div>
-    <div class="menu" id="sticky">
+    <div class="menu sticky-top" id="sticky">
         <ul class="menu-ul">
             <button id="openCartBtn" type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                data-target="#exampleModalCenter" onclick="openCart(this)"><span><i
+                data-target="#exampleModalCenter" data-backdrop="false" onclick="openCart(this)"><span><i
                         class="fa fa-shopping-cart pt-2"></i></span>
+                Cart <span id="badgeCount" class="badge badge-light" value="0">0</span>
             </button>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -304,4 +307,5 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="store.js"></script>
 </body>
+
 </html>
