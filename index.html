@@ -12,300 +12,106 @@
 </head>
 
 <body>
-    <!-- navbar starts  -->
-    <div class="parallax">
-        <div class="page-title">Eat Fresh</div>
-    </div>
-    <div class="menu sticky-top" id="sticky">
-        <ul class="menu-ul">
-            <button id="openCartBtn" type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                data-target="#exampleModalCenter" data-backdrop="false" onclick="openCart(this)"><span><i
-                        class="fa fa-shopping-cart pt-2"></i></span>
-                Cart <span id="badgeCount" class="badge badge-light" value="0">0</span>
-            </button>
-            <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Cart</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="cart-section" id="cart">
-                                <h1>Shopping Cart</h1>
-                                <div class="row cart justify-content-center">
-                                    <div class="cart-total m-3s">
-                                        <p>
-                                            <span>Total Price</span>
-                                            <span id="totalPrice">₹</span>
-                                        </p>
-                                        <p>
-                                            <span id="totalItems">Number of Items</span>
-                                            <span></span>
-                                        </p>
-                                        <p>
-                                            <span>You save</span>
-                                            <span>₹</span>
-                                        </p>
-                                        <a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse"
-                                            href="#collapseExample1" aria-expanded="false"
-                                            aria-controls="collapseExample1">
-                                            Apply Discount Coupon
-                                            <span><i class="fa fa-chevron-down pt-3"></i></span>
-                                        </a>
-                                        <div class="collapse" id="collapseExample1">
-                                            <div class="mt-3">
-                                                <div class="md-form md-outline mb-0">
-                                                    <input type="number" min=10 max=70 onchange="Discount()"
-                                                        id="discount-code1" class="form-control font-weight-light"
-                                                        placeholder="Enter discount coupon">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="cartItem">
-                                </div>
-                            </div>
-                            <div class="card mb-3 mt-5">
-                                <div class="card-body">
-                                    <h5 class="mb-4">Expected shipping delivery</h5>
-                                    <p class="mb-0"> Thu., 12.03. - Mon., 16.03.</p>
-                                </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="mb-4">We accept</h5>
-                                    <img class="mr-2" width="45px"
-                                        src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                                        alt="Visa">
-                                    <img class="mr-2" width="45px"
-                                        src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                                        alt="American Express">
-                                    <img class="mr-2" width="45px"
-                                        src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                                        alt="Mastercard">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                        onclick="checkLogin()">Proceed To Checkout</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 web-logo">
+                <img src="./assets/images/fashion-logo/fashion-logo.png" width="60">
+            </div>
+            <div class="col-md-3 d-flex my-auto">
+                <i class="fa fa-headphones fa-3x" aria-hidden="true"></i>
+                <p>CALL US<br>+153263282</p>
+            </div>
+            <div class="col-md-4 my-auto">
+                <div class="form-group has-search">
+                    <span class="form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search">
                 </div>
             </div>
-            <a href="#" class="a-menu">
-                <li>Home</li>
-            </a>
-            <a href="#deals" class="a-menu">
-                <li>Deals</li>
-            </a>
-            <a href="#recommendation" class="a-menu">
-                <li>Recommendation</li>
-            </a>
-            <a href="#vegetables" class="a-menu">
-                <li>Products</li>
-            </a>
-            <div class="search-box">
-                <form>
-                    <input type="text" placeholder="Search..." name="search" class="search-input">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            <button id="login-reg" type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                data-target=".bd-example-modal-sm">Login</button>
-            <div class="modal animate__animated animate__flipInY bd-example-modal-sm" tabindex="-1" role="dialog"
-                aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="login-form">
-                            <h1>Login Form</h1>
-                            <form id="login-form">
-                                <input type="text" name="username" placeholder="username" id="login-username">
-                                <input type="password" id="login-password" name="password" placeholder="password"
-                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                                    required>
-                                <input type="submit" value="log in" onclick="login()">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    </ul>
-    </div>
-    <!-- navbar ends  -->
-    <!-- categories starts here  -->
-    <div class="container">
-        <a href="#vegetables">
-            <div class="categories">
-                <img src="./assets/images/vegetables/onion.png">
-                <div class="image-title">Vegetables</div>
-            </div>
-        </a>
-        <a href="#fruits">
-            <div class="categories">
-                <img src="./assets/images/fruits/cherry.png">
-                <div class="image-title">Fruits</div>
-            </div>
-        </a>
-        <a href="#meat">
-            <div class="categories">
-                <img src="./assets/images/meat/meat.png">
-                <div class="image-title">Meat & Seafood</div>
-            </div>
-        </a>
-        <a href="#deals">
-            <div class="categories">
-                <img src="./assets/images/deals/deal.png">
-                <div class="image-title">Deals</div>
-            </div>
-        </a>
-    </div>
-    <!-- categories end here  -->
-    <!-- deal starts here  -->
-    <div class="deals-container" id="deals">
-        <div class="parallax">
-            <div class="title">Deals</div>
-        </div>
-        <div class="row  justify-content-center">
-            <div class="col-sm-12 col-lg-3">
-                <div class="deal">
-                    Save 20% on min-purchase of Rs.2500 on vegeatbles <br>
-                    <button class="coupon-btn">Add Coupon</button>
-                </div>
-            </div>
-            <div class="col-sm-12 col-lg-3">
-                <div class="deal">
-                    Save 25% on min-purchase of Rs.3500 on fruits <br>
-                    <button class="coupon-btn">Add Coupon</button>
-                </div>
-            </div>
-            <div class="col-sm-12 col-lg-3">
-                <div class="deal">
-                    Save 35% on min-purchase of Rs.4500 on meat/seafood<br>
-                    <button class="coupon-btn">Add Coupon</button>
-                </div>
+            <div class="col-md-2 my-auto">
+                <button class="btn btn-primary">Login/Signup</button>
             </div>
         </div>
     </div>
-    <!-- deal ends here  -->
-    <!-- recommendation starts here  -->
-    <div class="deals-container categories" id="recommendation">
-        <div class="parallax">
-            <div class="title">Highly Recommended</div>
-        </div>
-        <div class="items categories">
-            <div class="images">
-                <img src="./assets/images/vegetables/okra.png">
-            </div>
-            <div class="description">
-                <b>Okra</b><br>
-                <div class="item-select">
-                    Price : Rs. 25.00/1kg
-                </div>
-            </div>
-        </div>
-        <div class="items categories">
-            <div class="images">
-                <img src="./assets/images/fruits/apple.png">
-            </div>
-            <div class="description">
-                <b>Apple</b><br>
-                <div class="item-select">
-                    Price : Rs. 25.00/1kg
-                </div>
-            </div>
-        </div>
-        <div class="items categories">
-            <div class="images">
-                <img src="./assets/images/fruits/lichi.png">
-            </div>
-            <div class="description">
-                <b>Lichi<span class="badge badge-secondary">New</span></b><br>
-                <div class="item-select">
-                    Price : Rs. 25.00/1kg
-                </div>
-            </div>
-        </div>
-        <div class="items categories">
-            <div class="images">
-                <img src="./assets/images/meat/pork.png">
-            </div>
-            <div class="description">
-                <b>Pork</b><br>
-                <div class="item-select">
-                    Price : Rs. 25.00/1kg
-                </div>
-            </div>
-        </div>
-        <div class="items categories">
-            <div class="images">
-                <img src="./assets/images/meat/beef.png">
-            </div>
-            <div class="description">
-                <b>Beef</b><br>
-                <div class="item-select">
-                    Price : Rs. 25.00/1kg
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Recommendation ends here  -->
-    <!-- products section starts here  -->
-    <div class="deals-container" id="vegetables">
-        <div class="parallax">
-            <div class="title">Food Items / Products</div>
-        </div>
-    </div>
-    <!-- products section ends here  -->
-    <!-- footer starts here  -->
-    <div class="parallax1">
-        <div class="footer">
-            <div class="quick-links">
-                <div><b>Locations</b></div>
-                <ul>
-                    <li><a href="" class="a-links">Address 1</a></li>
-                    <li><a href="" class="a-links">Address 2</a></li>
-                    <li><a href="" class="a-links">Address 3</a></li>
-                </ul>
-            </div>
-            <div class="quick-links">
-                <div><b>Careers</b></div>
-                <ul>
-                    <li><a href="" class="a-links">Packing staff</a></li>
-                    <li><a href="" class="a-links">Delivery agents</a></li>
-                    <li><a href="" class="a-links">Shef Fillers</a></li>
-                </ul>
-            </div>
-            <div class="quick-links">
-                <div><b>Quick Links</b></div>
-                <ul>
-                    <li><a href="" class="a-links">Contact Us</a></li>
-                    <li><a href="" class="a-links">FAQ</a></li>
-                    <li><a href="" class="a-links">HELP</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="copyrights">
-        <i class="fa fa-copyright"></i>Created By Surbhi Khokhawat
-    </div>
-    <!-- footer sections ends here  -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="store.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Fashionista</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Men
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Women
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Accessories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gift</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Best in Mini</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sale</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="banner-img">
+        <img src="./assets/images/fashion-logo/banner-fashion.png" alt="" width="100%">
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm border-right">
+            <h2>Free Shipping</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="col-sm border-right">
+            <h2>Support 24/7</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="col-sm border-right">
+            <h2>Money Return</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
 </body>
 
 </html>
