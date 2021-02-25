@@ -2,3 +2,188 @@
     margin: 0;
     padding: 0;
 }
+.alfa{
+    background-color: antiquewhite;
+}
+.theta{
+    background-color: burlywood;
+}
+.section-img{
+    width: inherit;
+}
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: #05386b;
+
+  }
+  
+  .top-left {
+    position: absolute;
+    top: 15%;
+    left: 9%;
+    font-size: 25px;
+    color: #05386b;
+  }
+  
+  
+  .center-left {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color:dimgrey;
+    font-size: 70px;
+    font-weight: 700;
+    transform: translate(-50%, -50%);
+  }
+.shop{
+    background-color: #05386b;
+    color: white;
+    font-size: 8px;
+}
+.formal-content h2{
+    color:#333333;
+    font-size: 30px;
+    font-family: 'FontAwesome';
+    font-weight: bolder;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    position: relative;
+    left: -15%;
+
+}
+.web-logo{
+    text-align: center;
+}
+.formal-content h3{
+    color:#05386b;
+    font-family: 'FontAwesome';
+    font-size: inherit;
+    text-decoration: underline;
+    letter-spacing: 1px;
+
+}
+.american{
+    color:#333333;
+    left: 91.5%;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'FontAwesome';
+}
+p{
+    color: gray;
+    font-family: 'FontAwesome';
+    letter-spacing: 1px;
+
+}
+.carpet-content:hover{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    animation-name: new;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes new {
+    15%   {background-color: pink;}
+    20%  {background-color: orange;}
+    45%  {background-color: whitesmoke;}
+  }
+.carpet h2{
+    color:#333333;
+    font-size: 30px;
+    font-family: 'FontAwesome';
+    font-weight: bolder;
+    padding-top: 10px;
+    text-align: center;
+}
+.carpet p{
+    text-align: center;
+    letter-spacing: 1px;
+}
+.MultiCarousel { 
+    float: left; 
+    overflow: hidden; 
+    padding: 15px; 
+    width: 100%; 
+    position:relative; 
+}
+.MultiCarousel .MultiCarousel-inner { 
+    transition: 1s ease all; 
+    float: left; 
+}
+.MultiCarousel .MultiCarousel-inner .item { 
+    float: left;
+}
+.MultiCarousel .MultiCarousel-inner .item > div { 
+    text-align: center; 
+    padding:10px; 
+    margin:10px; 
+    background:#f1f1f1; 
+    color:#666;
+}
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { 
+    position:absolute; 
+    border-radius:50%;
+    top:calc(50% - 20px); 
+}
+.MultiCarousel .leftLst { 
+    left:0; 
+}
+.MultiCarousel .rightLst { 
+    right:0; 
+}
+    
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { 
+    pointer-events: none; 
+    background:#ccc; 
+}
+.pad15:hover{
+    width: 100px;
+    height: 100px;
+    transition: width 2s, height 2s, transform 2s;
+}
+.fa:hover{
+    animation-name: example;
+    animation-duration: 4s;
+  }
+  
+  @keyframes example {
+    from {background-color: pink;}
+    to {background-color: yellow;}
+  }
+  .omega{
+      margin-left: 3%;
+  }
+footer {
+    background-color:#05386b;
+    width: 100%;
+}
+footer h2{
+    color: white;
+    font-family: 'FontAwesome';
+    letter-spacing: 1px;
+
+
+}
+footer h1{
+    color: white;
+    font-family: 'FontAwesome';
+    letter-spacing: 1px;
+
+
+}
+footer h3{
+    color: white;
+    font-family: 'FontAwesome';
+    letter-spacing: 1px;
+
+
+}
